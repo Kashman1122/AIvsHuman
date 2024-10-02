@@ -88,7 +88,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 st.markdown("<h1 style='text-align: center; color: #ff4d4d;'>AI vs Human Text Detector</h1>", unsafe_allow_html=True)
 
 # Input box
-input_sms = st.text_area("Enter the message", placeholder="Type here... (at least 50 words)", height=150)
+input_sms = st.text_area("Enter the message", placeholder="Type here... (at least 10 words)", height=150)
 
 # Word count display
 if input_sms:
@@ -98,7 +98,7 @@ if input_sms:
 # Prediction button
 if st.button('Predict'):
     if len(input_sms.split()) < 50:
-        st.error("Please enter a message with at least 50 words.")
+        st.error("Please enter a message with at least 10 words.")
     else:
         # 1. Preprocess the text
         transformed_sms = transform_text(input_sms)
