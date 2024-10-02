@@ -134,7 +134,8 @@ def transform_text(text):
 
     return " ".join(y)
 
-
+nltk.download('punkt_tab')
+nltk.download('stopwords')
 # Load the saved vectorizer and model
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
